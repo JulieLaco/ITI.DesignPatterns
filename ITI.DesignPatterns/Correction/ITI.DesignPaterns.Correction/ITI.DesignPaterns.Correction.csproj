@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>ITI.DesignPatterns</AssemblyName>
+    <RootNamespace>ITI.DesignPatterns</RootNamespace>
+
   </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(TargetPath) $(SolutionDir)\..\ITI.DesignPatterns\$(OutDir) /e /y" />
+  </Target>
+
 
 </Project>

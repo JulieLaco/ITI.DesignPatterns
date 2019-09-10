@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITI.DesignPatterns.FactoryMethod.CharacterData;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +7,10 @@ namespace ITI.DesignPaterns.Correction.FactoryMethod
 {
     class CharacterItems : ICharacterItems
     {
-        public CharacterItems(List<string> stuff)
+        public CharacterItems(int characterType)
         {
-            Stuff = stuff;
+            CharacterItemsList characterItems = new CharacterItemsList();
+            Stuff = characterItems.GetCharacterDefaultStuff(characterType);
         }
 
         List<string> Stuff { get; set; }

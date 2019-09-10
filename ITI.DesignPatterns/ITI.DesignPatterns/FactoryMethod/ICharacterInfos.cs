@@ -8,5 +8,7 @@ namespace ITI.DesignPaterns.Correction.FactoryMethod
     {
         string GetCharacterLastName();
         string GetCharacterFirstName();
+        string GetCharacterClass();
+        string GetCharacterType();
     }
 }

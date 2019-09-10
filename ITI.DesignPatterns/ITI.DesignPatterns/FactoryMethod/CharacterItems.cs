@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITI.DesignPatterns.FactoryMethod.CharacterData;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -4,22 +4,32 @@ using System.Text;
 
 namespace ITI.DesignPaterns.Correction.FactoryMethod
 {
-    public abstract class AbsCharacterFactory
+    public abstract class AbsCharacter
     {
         public abstract ICharacterInfos CharacterInfosMethod();
         public abstract ICharacterItems CharacterItemsMethod();
 
-        public string FirstName()
+        public string GetFirstName()
         {
             return CharacterInfosMethod().GetCharacterFirstName();
         }
 
-        public string LastName()
+        public string GetLastName()
         {
             return CharacterInfosMethod().GetCharacterLastName();
         }
 
-        public List<string> Stuff()
+        public string GetCharacterClass()
+        {
+            return CharacterInfosMethod().GetCharacterClass();
+        }
+
+        public string GetCharacterType()
+        {
+            return CharacterInfosMethod().GetCharacterType();
+        }
+
+        public List<string> GetStuff()
         {
             return CharacterItemsMethod().GetStuff();
         }

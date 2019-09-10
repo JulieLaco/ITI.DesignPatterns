@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ITI.DesignPaterns.Correction.FactoryMethod
 {
-    public class CharacterFactory : AbsCharacterFactory
+    public class CharacterFactory
     {
-        readonly (string FirstName, string LastName) _character1 = ("Jeff", "Dunham");
-        readonly List<string> _defaultStuff = new List<string>
-        {
-            "Axe",
-            "Arrow",
-            "Sword",
-            "Knife"
-        };
-
-        public ICharacterItems CharacterItemsMethod()
+        public Character CreateDefaultCharacter(string firstName, string lastName)
         {
             throw new NotImplementedException();
         }
 
-        public ICharacterInfos CharacterInfosMethod()
+        public Character CreateGnomeLepreux(string firstName, string lastName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Character CreateFEMME(string firstName, string lastName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Character CreateRhumanoïde(string firstName, string lastName)
         {
             throw new NotImplementedException();
         }
