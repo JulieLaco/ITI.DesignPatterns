@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ITI.DesignPatterns.Decorator.Classes
+﻿namespace ITI.DesignPatterns.Decorator.Classes
 {
     class Wizard : Decorator
     {
@@ -12,9 +8,14 @@ namespace ITI.DesignPatterns.Decorator.Classes
 
         }
 
+        public string UseFireSpell()
+        {
+            return "Fire !!!";
+        }
+
         public override string DisplayInfo()
         {
-            throw new NotImplementedException();
+            return base.DisplayInfo() + " and my class is Mage";
         }
     }
 }

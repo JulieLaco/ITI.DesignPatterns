@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ITI.DesignPatterns.Decorator
+﻿namespace ITI.DesignPatterns.Decorator
 {
     class NonPlayerCharacter : Character
     {
@@ -10,7 +6,7 @@ namespace ITI.DesignPatterns.Decorator
 
         public override string DisplayInfo()
         {
-            return "Je suis un personnage non joueur";
+            return "I'm a non-player character, my name is " + base.Name;
         }
     }
 }
