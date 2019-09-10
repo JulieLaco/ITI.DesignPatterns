@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ITI.DesignPatterns.Decorator
 {
@@ -10,7 +8,7 @@ namespace ITI.DesignPatterns.Decorator
 
         public override string DisplayInfo()
         {
-            return "Je suis un personnage joueur";
+            return "I'm a player character, my name is " + base.Name;
         }
     }
 }
