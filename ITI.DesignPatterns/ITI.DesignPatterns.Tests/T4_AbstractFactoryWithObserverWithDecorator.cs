@@ -1,6 +1,5 @@
 using FluentAssertions;
 using ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator;
-using ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator.Decorators;
 using NUnit.Framework;
 
 namespace ITI.DesignPatterns.Tests

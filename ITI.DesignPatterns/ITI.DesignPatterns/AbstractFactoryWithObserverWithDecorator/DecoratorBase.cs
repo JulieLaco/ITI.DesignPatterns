@@ -2,32 +2,30 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator.Decorators
+namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public class DecoratorBase : ICar
     {
-        private ICar _car;
-
         public DecoratorBase(ICar car)
         {
-            _car = car;
+            throw new NotImplementedException();
         }
 
-        public int GetMaxSpeed => _car.GetMaxSpeed;
+        public int GetMaxSpeed => throw new NotImplementedException();
 
         public virtual int Accelerate()
         {
-            return _car.Accelerate();
+            throw new NotImplementedException();
         }
 
         public BrandModel GetBrandModel()
         {
-            return _car.GetBrandModel();
+            throw new NotImplementedException();
         }
 
         public string GetModel()
         {
-            return _car.GetModel();
+            throw new NotImplementedException();
         }
     }
 }

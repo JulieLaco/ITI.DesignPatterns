@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator.Decorators
+namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public class Nitro : DecoratorBase
     {
@@ -11,11 +11,11 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator.Decorators
         {
         }
 
-        public int SpeedBoost { get { return 30; } }
+        public int SpeedBoost { get { throw new NotImplementedException(); } }
 
         public override int Accelerate()
         {
-            return base.Accelerate() + SpeedBoost;
+            throw new NotImplementedException();
         }
     }
 }
