@@ -1,4 +1,5 @@
 using FluentAssertions;
+//using ITI.DesignPatterns.FactoryMethod2;
 using ITI.DesignPaterns.Correction.FactoryMethod;
 using NUnit.Framework;
 
@@ -54,5 +55,12 @@ namespace ITI.DesignPatterns.Tests
                 rhumanoïde.GetStuff()[0].Should().Be("alcool");
             }
         }
+
+        //[Test]
+        //public void T3test()
+        //{
+        //    var factory = new Character().ExecuteCreation(CharacterType.Human, "Sir", "Arthur");
+        //    factory.Walk().Should().Be("je marche !");
+        //}
     }
 }
