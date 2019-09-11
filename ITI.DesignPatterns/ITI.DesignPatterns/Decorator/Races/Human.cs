@@ -14,18 +14,12 @@ namespace ITI.DesignPatterns.Decorator.Races
             _fear = courage;
         }
 
-        public int FearDamage { get { return _fearDamage; } }
-        public int NormalDamage { get { return _normalDamage; } }
+        public int FearDamage { get { throw new System.NotImplementedException(); } }
+        public int NormalDamage { get { throw new System.NotImplementedException(); } }
 
         public override Damages Attack()
         {
-            if (_fear > _fearLimit)
-            {
-                return new Damages() { Quantity = _fearDamage, Type = DamageTypes.Miss };
-
-            }
-
-            return new Damages() { Quantity = _normalDamage, Type = DamageTypes.Physical };
+            throw new System.NotImplementedException();
         }
     }
 }
