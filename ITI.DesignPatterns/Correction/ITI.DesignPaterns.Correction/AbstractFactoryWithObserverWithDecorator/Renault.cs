@@ -15,6 +15,13 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
         BrandModel BrandModel { get; }
         RenaultModel RenaultModel { get; }
 
+        public int MaxSpeed { get { return 80; } }
+
+        public int Accelerate()
+        {
+            return MaxSpeed;
+        }
+
         public BrandModel GetBrandModel() => BrandModel;
 
         public string GetModel() => RenaultModel.ToString();

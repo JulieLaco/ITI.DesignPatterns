@@ -9,5 +9,7 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
         BrandModel GetBrandModel();
 
         string GetModel();
+
+        int Accelerate();
     }
 }
