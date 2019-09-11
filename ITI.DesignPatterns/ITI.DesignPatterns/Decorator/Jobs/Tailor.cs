@@ -1,4 +1,5 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator;
+using ITI.DesignPatterns.Decorator.Damage;
 
 namespace ITI.DesignPatterns.Correction.Decorator.Jobs
 {

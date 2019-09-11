@@ -1,6 +1,6 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator.Races
+namespace ITI.DesignPatterns.Decorator.Races
 {
     public class Human : Character
     {
