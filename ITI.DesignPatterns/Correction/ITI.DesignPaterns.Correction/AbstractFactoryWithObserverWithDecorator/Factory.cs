@@ -20,10 +20,13 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
             brand = brandModel;
             _factories = new Dictionary<BrandModel, CarFactory>
             {
-                {BrandModel.Renault, new RenaultFactory() },
-                {BrandModel.Toyota, new ToyotaFactory() }
+                {BrandModel.Renault, new RenaultFactory("Renault") },
+                {BrandModel.Toyota, new ToyotaFactory("Toyota") }
             };
+            CarFactory = _factories[brandModel];
         }
+
+        public CarFactory CarFactory { get; }
 
         public ICar CreateToyota(ToyotaModel toyotaModel) => _factories[brand].CreateCar(toyotaModel);
         public ICar CreateRenault(RenaultModel renaultModel) => _factories[brand].CreateCar(renaultModel);
