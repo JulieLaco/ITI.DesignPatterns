@@ -13,9 +13,11 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
     public class Factory
     {
         readonly Dictionary<BrandModel, CarFactory> _factories;
+        readonly BrandModel brand;
 
-        public Factory()
+        public Factory(BrandModel brandModel)
         {
+            brand = brandModel;
             _factories = new Dictionary<BrandModel, CarFactory>
             {
                 {BrandModel.Renault, new RenaultFactory() },
@@ -23,6 +25,7 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
             };
         }
 
-        public IBrand CreateCar(BrandModel brandModel) => _factories[brandModel].CreateCar(brandModel);
+        public ICar CreateToyota(ToyotaModel toyotaModel) => _factories[brand].CreateCar(toyotaModel);
+        public ICar CreateRenault(RenaultModel renaultModel) => _factories[brand].CreateCar(renaultModel);
     }
 }

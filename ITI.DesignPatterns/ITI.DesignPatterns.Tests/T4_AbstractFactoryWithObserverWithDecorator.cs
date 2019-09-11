@@ -10,18 +10,24 @@ namespace ITI.DesignPatterns.Tests
         [Test]
         public void T1_create_car()
         {
-            Factory factory = new Factory();
-            IBrand toyotaCar = factory.CreateCar(BrandModel.Toyota);
-            toyotaCar.GetBrandModel().Should().Be(BrandModel.Toyota);
 
-            IBrand renaultCar = factory.CreateCar(BrandModel.Renault);
-            renaultCar.GetBrandModel().Should().Be(BrandModel.Renault);
+            {
+                ICar renaultClioCar = new Factory(BrandModel.Renault).CreateRenault(RenaultModel.Clio);
+                renaultClioCar.GetBrandModel().Should().Be(BrandModel.Renault);
+                renaultClioCar.GetModel().Should().Be(RenaultModel.Clio.ToString());
+            }
 
-            //Factory factory = new Factory();
-            //CarFactory carFactory = factory.CreateCarFactory();
-            //carFactory.CreateToyota();
+            {
+                ICar toyotaAigoCar = new Factory(BrandModel.Toyota).CreateToyota(ToyotaModel.Aigo);
+                toyotaAigoCar.GetBrandModel().Should().Be(BrandModel.Toyota);
+                toyotaAigoCar.GetModel().Should().Be(ToyotaModel.Aigo.ToString());
+            }
 
-            //factory.createCarFactory().CreateToyota()
+            {
+                ICar toyotaYarisCar = new Factory(BrandModel.Toyota).CreateToyota(ToyotaModel.Yaris);
+                toyotaYarisCar.GetBrandModel().Should().Be(BrandModel.Toyota);
+                toyotaYarisCar.GetModel().Should().Be(ToyotaModel.Yaris.ToString());
+            }
         }
     }
 }

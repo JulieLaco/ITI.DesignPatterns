@@ -4,15 +4,19 @@ using System.Text;
 
 namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
-    public class Toyota : IBrand
+    public class Toyota : ICar
     {
-        public Toyota(BrandModel brandModel)
+        public Toyota(BrandModel brandModel, ToyotaModel toyotaModel)
         {
             BrandModel = brandModel;
+            ToyotaModel = toyotaModel;
         }
 
-        public BrandModel BrandModel { get; }
+        BrandModel BrandModel { get; }
+        ToyotaModel ToyotaModel { get; }
 
         public BrandModel GetBrandModel() => BrandModel;
+
+        public string GetModel() => ToyotaModel.ToString();
     }
 }

@@ -14,6 +14,8 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 
     public class ToyotaFactory : CarFactory
     {
-        public override IBrand CreateCar(BrandModel brandModel) => new Toyota(brandModel);
+        public override ICar CreateCar(ToyotaModel toyotaModel) => new Toyota(BrandModel.Toyota, toyotaModel);
+
+        public override ICar CreateCar(RenaultModel renaultModel) => throw new Exception("Cannot create a Renault model from Toyota factory");
     }
 }

@@ -4,8 +4,10 @@ using System.Text;
 
 namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
-    public interface IBrand
+    public interface ICar
     {
         BrandModel GetBrandModel();
+
+        string GetModel();
     }
 }

@@ -6,6 +6,7 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public abstract class CarFactory
     {
-        public abstract IBrand CreateCar(BrandModel brandModel);
+        public abstract ICar CreateCar(ToyotaModel toyotaModel);
+        public abstract ICar CreateCar(RenaultModel renaultModel);
     }
 }
