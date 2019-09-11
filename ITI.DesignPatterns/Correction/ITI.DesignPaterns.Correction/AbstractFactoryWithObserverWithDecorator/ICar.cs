@@ -9,5 +9,9 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
         BrandModel GetBrandModel();
 
         string GetModel();
+
+        int GetMaxSpeed { get; }
+
+        int Accelerate();
     }
 }
