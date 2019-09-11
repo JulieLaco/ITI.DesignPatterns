@@ -1,4 +1,7 @@
 ﻿using FluentAssertions;
+using ITI.DesignPatterns.Decorator.Classes;
+using ITI.DesignPatterns.Decorator.Damage;
+using ITI.DesignPatterns.Decorator.Races;
 using NUnit.Framework;
 
 namespace ITI.DesignPatterns.Tests
@@ -18,8 +21,8 @@ namespace ITI.DesignPatterns.Tests
         {
             var character = new Human(0) { Name = "Bill" };
             var characterClass = new Warrior(character);
-            
-            characterClass.Name.Should().Be("Bill");
+
+            character.Name.Should().Be("Bill");
             characterClass.Should().BeOfType<Warrior>();
         }
 
@@ -36,7 +39,7 @@ namespace ITI.DesignPatterns.Tests
             var character = new Dwarf(0) { Name = "Gonar" };
             var characterClass = new Wizard(character);
 
-            characterClass.Name.Should().Be("Gonar");
+            character.Name.Should().Be("Gonar");
             characterClass.Should().BeOfType<Wizard>();
         }
 
@@ -50,8 +53,7 @@ namespace ITI.DesignPatterns.Tests
             characterClass1.Should().BeOfType<Warrior>();
             characterClass2.Should().BeOfType<Wizard>();
 
-            characterClass1.Name.Should().Be("Gonar");
-            characterClass2.Name.Should().Be("Gonar");
+            character.Name.Should().Be("Gonar");
         }
 
         [Test]
@@ -63,11 +65,59 @@ namespace ITI.DesignPatterns.Tests
             var baseDamage = character.Attack();
             var damages = characterClass.Attack();
 
-            characterClass.Name.Should().Be("Bill");
+            character.Name.Should().Be("Bill");
             characterClass.Should().BeOfType<Wizard>();
 
-            damages.Quantity.Should().Be(baseDamage.Quantity + characterClass.WizardDamages.Quantity);
-            damages.Type.Should().Be(characterClass.WizardDamages.Type);
+            damages.Quantity.Should().Be(baseDamage.Quantity + characterClass.Damages.Quantity);
+            damages.Type.Should().Be(DamageTypes.Magical);
+        }
+
+        [Test]
+        public void T7_a_human_character_with_Warrior_Class_Should_Do_Physical_Damage()
+        {
+            var character = new Human(0) { Name = "Bill" };
+            var characterClass = new Warrior(character);
+
+            var baseDamage = character.Attack();
+            var damages = characterClass.Attack();
+
+            character.Name.Should().Be("Bill");
+            characterClass.Should().BeOfType<Warrior>();
+
+            damages.Quantity.Should().Be(baseDamage.Quantity + characterClass.Damages.Quantity);
+            damages.Type.Should().Be(DamageTypes.Physical);
+        }
+
+        [Test]
+        public void T8_a_feared_human_character_doesnt_make_damage()
+        {
+            var character = new Human(50) { Name = "Bill" };
+            var characterClass = new Wizard(character);
+
+            var baseDamage = character.Attack();
+            var damages = characterClass.Attack();
+
+            character.Name.Should().Be("Bill");
+            characterClass.Should().BeOfType<Wizard>();
+
+            damages.Quantity.Should().Be(0);
+            damages.Type.Should().Be(DamageTypes.Miss);
+        }
+
+        [Test]
+        public void T9_a_drunk_dwarf_character_make_less_damage()
+        {
+            var character = new Dwarf(50) { Name = "Gonar" };
+            var characterClass = new Wizard(character);
+
+            var baseDamage = character.Attack();
+            var damages = characterClass.Attack();
+
+            character.Name.Should().Be("Gonar");
+            characterClass.Should().BeOfType<Wizard>();
+
+            damages.Quantity.Should().Be(baseDamage.Quantity + characterClass.Damages.Quantity);
+            damages.Type.Should().Be(characterClass.Damages.Type);
         }
     }
 }
