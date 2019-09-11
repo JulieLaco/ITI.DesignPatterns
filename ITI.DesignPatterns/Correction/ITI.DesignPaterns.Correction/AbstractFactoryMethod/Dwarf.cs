@@ -6,14 +6,19 @@ namespace ITI.DesignPatterns.FactoryMethod2
 {
     public class Dwarf : ICharacter
     {
-        readonly string _lastName;
-        readonly string _firstName;
-
         public Dwarf(string lastName, string firstName)
         {
-            _lastName = lastName;
-            _firstName = firstName;
+            LastName = lastName;
+            FirstName = firstName;
         }
+
+        public string LastName { get; }
+
+        public string FirstName { get; }
+
+        public string GetFirstName() => FirstName;
+
+        public string GetLastName() => LastName;
 
         public string Walk()
         {

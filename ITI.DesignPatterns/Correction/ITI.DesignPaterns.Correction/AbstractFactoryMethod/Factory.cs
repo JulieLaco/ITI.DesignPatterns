@@ -10,10 +10,11 @@ namespace ITI.DesignPatterns.FactoryMethod2
         Dwarf
     }
 
-    public class Character
+    public class Factory
     {
         readonly Dictionary<CharacterType, CharacterFactory> _factories;
-        public Character()
+
+        public Factory()
         {
             _factories = new Dictionary<CharacterType, CharacterFactory>
             {
@@ -22,6 +23,6 @@ namespace ITI.DesignPatterns.FactoryMethod2
             };
         }
 
-        public ICharacter ExecuteCreation(CharacterType type, string lastName, string firstName) => _factories[type].Create(lastName, firstName);
+        public ICharacter CreateCharacter(CharacterType type, string lastName, string firstName) => _factories[type].Create(lastName, firstName);
     }
 }

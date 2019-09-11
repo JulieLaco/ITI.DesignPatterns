@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ITI.DesignPatterns.FactoryMethod2
 {
-    public interface ICharacter
+    public abstract class CharacterFactory
     {
-        string Walk();
+        public abstract ICharacter Create(string lastName, string firstName);
     }
 }
