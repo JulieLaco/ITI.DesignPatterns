@@ -4,16 +4,22 @@ namespace ITI.DesignPatterns.Decorator
 {
     public abstract class DecoratorBase : Character
     {
-        protected Character character;
+        protected Character _character;
 
         public DecoratorBase(Character character)
         {
-            this.character = character;
+            _character = character;
         }
 
         public override Damages Attack()
         {
-            return character.Attack();
+            return _character.Attack();
+        }
+
+        public override string Name
+        {
+            get { throw new System.NotImplementedException(); }
+            set { throw new System.NotImplementedException(); }
         }
     }
 }

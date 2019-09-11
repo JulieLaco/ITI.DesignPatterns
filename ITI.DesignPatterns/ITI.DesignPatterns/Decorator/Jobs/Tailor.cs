@@ -1,7 +1,7 @@
 ﻿using ITI.DesignPatterns.Decorator;
 using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator.Jobs
+namespace ITI.DesignPatterns.Decorator.Jobs
 {
     public class Tailor : DecoratorBase
     {

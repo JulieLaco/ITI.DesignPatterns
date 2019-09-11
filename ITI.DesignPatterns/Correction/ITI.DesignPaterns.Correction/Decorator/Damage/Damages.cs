@@ -1,4 +1,4 @@
-﻿namespace ITI.DesignPatterns.Correction.Decorator.Damage
+﻿namespace ITI.DesignPatterns.Decorator.Damage
 {
     public class Damages
     {

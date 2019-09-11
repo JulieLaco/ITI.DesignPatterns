@@ -1,6 +1,6 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator.Classes
+namespace ITI.DesignPatterns.Decorator.Classes
 {
     public class Wizard : DecoratorBase
     {
@@ -12,7 +12,7 @@ namespace ITI.DesignPatterns.Correction.Decorator.Classes
 
         }
 
-        public Damages WizardDamages { get { return _wizardDamage; } }
+        public Damages Damages { get { return _wizardDamage; } }
 
         public override Damages Attack()
         {
