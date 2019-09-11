@@ -15,8 +15,15 @@ namespace ITI.DesignPatterns.Correction.Decorator.Classes
         public override Damages Attack()
         {
             var baseDamage = base.Attack();
-            var newDamage = new Damages() { Quantity = baseDamage.Quantity + _warriorDamage.Quantity, Type = _warriorDamage.Type };
-            return newDamage;
+
+            if (baseDamage.Type != DamageTypes.Miss)
+            {
+                return new Damages() { Quantity = baseDamage.Quantity + _warriorDamage.Quantity, Type = _warriorDamage.Type };
+            }
+            else
+            {
+                return new Damages() { Quantity = 0, Type = DamageTypes.Miss };
+            }
         }
     }
 }

@@ -3,6 +3,7 @@
     public enum DamageTypes
     {
         Physical,
-        Magical
+        Magical,
+        Miss
     }
 }

@@ -12,13 +12,20 @@ namespace ITI.DesignPatterns.Decorator.Classes
 
         }
 
-        public Damages WizardDamages { get { return _wizardDamage; } }
+        public Damages Damages { get { return _wizardDamage; } }
 
         public override Damages Attack()
         {
             var baseDamage = base.Attack();
-            var newDamage = new Damages() { Quantity = baseDamage.Quantity + _wizardDamage.Quantity, Type = _wizardDamage.Type };
-            return newDamage;
+
+            if (baseDamage.Type != DamageTypes.Miss)
+            {
+                return new Damages() { Quantity = baseDamage.Quantity + _wizardDamage.Quantity, Type = _wizardDamage.Type };
+            }
+            else
+            {
+                return new Damages() { Quantity = 0, Type = DamageTypes.Miss };
+            }
         }
     }
 }
