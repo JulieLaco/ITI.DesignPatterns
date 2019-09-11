@@ -10,6 +10,8 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 
         string GetModel();
 
+        int GetMaxSpeed { get; }
+
         int Accelerate();
     }
 }

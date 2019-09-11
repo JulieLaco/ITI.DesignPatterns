@@ -1,5 +1,6 @@
 using FluentAssertions;
 using ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator;
+using ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator.Decorators;
 using NUnit.Framework;
 
 namespace ITI.DesignPatterns.Tests
@@ -87,6 +88,24 @@ namespace ITI.DesignPatterns.Tests
 
                 visitor.Unsubscribe(renaultFactory.CarFactory);
             }
+        }
+
+        [Test]
+        public void T3_create_A_Renault_with_Turbo()
+        {
+            ICar renaultCar = new Factory(BrandModel.Renault).CreateRenault(RenaultModel.Clio);
+            var nitroCar = new Nitro(renaultCar);
+
+            nitroCar.Accelerate().Should().Be(renaultCar.GetMaxSpeed + nitroCar.SpeedBoost);
+        }
+
+        [Test]
+        public void T4_create_A_Toyota_with_Turbo()
+        {
+            ICar toyotaCar = new Factory(BrandModel.Toyota).CreateToyota(ToyotaModel.Yaris);
+            var nitroCar = new Nitro(toyotaCar);
+
+            nitroCar.Accelerate().Should().Be(toyotaCar.GetMaxSpeed + nitroCar.SpeedBoost);
         }
     }
 }

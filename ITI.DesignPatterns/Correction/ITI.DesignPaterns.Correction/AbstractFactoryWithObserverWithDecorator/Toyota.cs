@@ -15,11 +15,11 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
         BrandModel BrandModel { get; }
         ToyotaModel ToyotaModel { get; }
 
-        public int MaxSpeed { get { return 90; } }
+        public int GetMaxSpeed { get { return 90; } }
 
         public int Accelerate()
         {
-            return MaxSpeed;
+            return GetMaxSpeed;
         }
 
         public BrandModel GetBrandModel() => BrandModel;
