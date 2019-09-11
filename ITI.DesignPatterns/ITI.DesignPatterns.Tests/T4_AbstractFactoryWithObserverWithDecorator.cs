@@ -100,12 +100,13 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T4_create_A_Toyota_with_Turbo()
+        public void T4_create_A_Toyota_with_Turbo_and_Fins()
         {
             ICar toyotaCar = new Factory(BrandModel.Toyota).CreateToyota(ToyotaModel.Yaris);
-            var nitroCar = new Nitro(toyotaCar);
+            var fins = new Fins(toyotaCar);
+            var nitroCarWithFins = new Nitro(fins);
 
-            nitroCar.Accelerate().Should().Be(toyotaCar.GetMaxSpeed + nitroCar.SpeedBoost);
+            nitroCarWithFins.Accelerate().Should().Be(toyotaCar.GetMaxSpeed + nitroCarWithFins.SpeedBoost + fins.SpeedBoost);
         }
     }
 }
