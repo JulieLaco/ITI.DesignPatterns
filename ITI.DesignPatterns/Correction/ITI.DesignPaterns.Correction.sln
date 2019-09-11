@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.DesignPaterns.Correction", "ITI.DesignPaterns.Correction\ITI.DesignPaterns.Correction.csproj", "{1D867266-515E-4933-98F0-A5B1FCAD4E74}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A17BA799-B7E2-4126-AFBD-467112FC8010} = {A17BA799-B7E2-4126-AFBD-467112FC8010}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.DesignPatterns", "..\ITI.DesignPatterns\ITI.DesignPatterns.csproj", "{A17BA799-B7E2-4126-AFBD-467112FC8010}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.DesignPatterns.Tests", "..\ITI.DesignPatterns.Tests\ITI.DesignPatterns.Tests.csproj", "{3A5EE261-3CCB-4267-8604-F179713F0A6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1D867266-515E-4933-98F0-A5B1FCAD4E74} = {1D867266-515E-4933-98F0-A5B1FCAD4E74}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
