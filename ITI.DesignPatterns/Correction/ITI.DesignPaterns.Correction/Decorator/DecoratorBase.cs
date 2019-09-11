@@ -1,19 +1,25 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator
+namespace ITI.DesignPatterns.Decorator
 {
     public abstract class DecoratorBase : Character
     {
-        protected Character character;
+        protected Character _character;
 
         public DecoratorBase(Character character)
         {
-            this.character = character;
+            _character = character;
         }
 
         public override Damages Attack()
         {
-            return character.Attack();
+            return _character.Attack();
+        }
+
+        public override string Name
+        {
+            get { return _character.Name; }
+            set { _character.Name = value; }
         }
     }
 }

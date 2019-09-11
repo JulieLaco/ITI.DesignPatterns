@@ -1,6 +1,6 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator.Classes
+namespace ITI.DesignPatterns.Decorator.Classes
 {
     public class Warrior : DecoratorBase
     {
@@ -11,6 +11,8 @@ namespace ITI.DesignPatterns.Correction.Decorator.Classes
         {
 
         }
+
+        public Damages Damages { get { return _warriorDamage; } }
 
         public override Damages Attack()
         {

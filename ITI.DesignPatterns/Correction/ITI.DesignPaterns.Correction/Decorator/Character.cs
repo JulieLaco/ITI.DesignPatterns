@@ -1,10 +1,10 @@
-﻿using ITI.DesignPatterns.Correction.Decorator.Damage;
+﻿using ITI.DesignPatterns.Decorator.Damage;
 
-namespace ITI.DesignPatterns.Correction.Decorator
+namespace ITI.DesignPatterns.Decorator
 {
     public abstract class Character
     {
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         public abstract Damages Attack();
     }
