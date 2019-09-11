@@ -11,6 +11,10 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
             throw new NotImplementedException();
         }
 
+        public string FirstName { get; }
+
+        public string LastName { get; }
+
         public void AddNotification(Notification notification) => throw new NotImplementedException();
 
         public List<Notification> GetNotifications() => throw new NotImplementedException();
