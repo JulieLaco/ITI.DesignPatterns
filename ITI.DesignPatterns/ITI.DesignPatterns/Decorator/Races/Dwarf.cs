@@ -12,21 +12,15 @@ namespace ITI.DesignPatterns.Decorator.Races
 
         public Dwarf(int drunkLevel) 
         {
-            _drunkLevel = drunkLevel;
+            
         }
 
-        public int DrunkDamage { get { return _drunkDamage; } }
-        public int NormalDamage { get { return _normalDamage; } }
+        public int DrunkDamage { get { throw new System.NotImplementedException(); } }
+        public int NormalDamage { get { throw new System.NotImplementedException(); } }
 
         public override Damages Attack()
         {
-            if (_drunkLevel > _drunkLimit)
-            {
-                return new Damages() { Quantity = _drunkDamage, Type = DamageTypes.Physical };
-
-            }
-
-            return new Damages() { Quantity = _normalDamage, Type = DamageTypes.Physical };
+            throw new System.NotImplementedException();
         }
     }
 }

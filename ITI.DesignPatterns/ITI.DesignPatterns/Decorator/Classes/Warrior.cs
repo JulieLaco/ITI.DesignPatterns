@@ -12,20 +12,11 @@ namespace ITI.DesignPatterns.Decorator.Classes
 
         }
 
-        public Damages Damages { get { return _warriorDamage; } }
+        public Damages Damages { get { throw new System.NotImplementedException(); } }
 
         public override Damages Attack()
         {
-            var baseDamage = base.Attack();
-
-            if (baseDamage.Type != DamageTypes.Miss)
-            {
-                return new Damages() { Quantity = baseDamage.Quantity + _warriorDamage.Quantity, Type = _warriorDamage.Type };
-            }
-            else
-            {
-                return new Damages() { Quantity = 0, Type = DamageTypes.Miss };
-            }
+            throw new System.NotImplementedException();
         }
     }
 }
