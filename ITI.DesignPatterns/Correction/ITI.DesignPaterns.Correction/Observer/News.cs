@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.ObserverMethod
+namespace ITI.DesignPatterns.Observer
 {
     public class News
     {
         internal News(string title, string message, Company company)
         {
-            throw new NotImplementedException();
+            Title = title;
+            Message = message;
+            Company = company;
         }
 
         public string Title { get; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.ObserverMethod
+namespace ITI.DesignPatterns.Observer
 {
     public class Visitor : IObserver
     {
