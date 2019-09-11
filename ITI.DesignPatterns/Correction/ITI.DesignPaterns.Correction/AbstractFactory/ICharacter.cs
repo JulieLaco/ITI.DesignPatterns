@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.AbstractFactoryMethod
+namespace ITI.DesignPatterns.AbstractFactory
 {
     public interface ICharacter
     {

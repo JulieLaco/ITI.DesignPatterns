@@ -1,5 +1,5 @@
 using FluentAssertions;
-using ITI.DesignPatterns.AbstractFactoryMethod;
+using ITI.DesignPatterns.AbstractFactory;
 using NUnit.Framework;
 
 namespace ITI.DesignPatterns.Tests

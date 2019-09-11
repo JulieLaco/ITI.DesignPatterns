@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using FluentAssertions;
-using ITI.DesignPatterns.ObserverMethod;
+using ITI.DesignPatterns.Observer;
 using NUnit.Framework;
 
 namespace ITI.DesignPatterns.Tests

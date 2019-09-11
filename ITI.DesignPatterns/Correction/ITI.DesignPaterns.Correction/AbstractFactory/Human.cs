@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITI.DesignPatterns.AbstractFactoryMethod
+namespace ITI.DesignPatterns.AbstractFactory
 {
-    public class Dwarf : ICharacter
+    public class Human : ICharacter
     {
-        public Dwarf(string lastName, string firstName)
+        public Human(string lastName, string firstName)
         {
             LastName = lastName;
             FirstName = firstName;
@@ -20,9 +20,6 @@ namespace ITI.DesignPatterns.AbstractFactoryMethod
 
         public string GetLastName() => LastName;
 
-        public string Walk()
-        {
-            return "je marche !";
-        }
+        public string Walk() => "Je marche !";
     }
 }
