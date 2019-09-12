@@ -11,14 +11,14 @@ namespace ITI.DesignPatterns.Tests
     public class T2_ObserverMethod
     {
         [Test]
-        public void T1_create_company()
+        public void T1_create_company_with_a_name()
         {
             Company company = new Company("GoodNews");
             company.GetName.Should().Be("GoodNews");
         }
 
         [Test]
-        public void T2_create_news()
+        public void T2_create_news_with_a_title_and_message()
         {
             Company company = new Company("GoodNews");
 
@@ -31,7 +31,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T3_create_subscribers()
+        public void T3_create_a_subscriber_with_firstname_and_lastname()
         {
             Subscriber subscriber = new Subscriber("Olivier", "Spinelli");
             subscriber.GetFirstName.Should().Be("Olivier");
@@ -39,7 +39,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T4_add_subscribers()
+        public void T4_add_subscribers_to_the_company_mailing_list()
         {
             Company company = new Company("GoodNews");
             Subscriber subscriber = new Subscriber("Olivier", "Spinelli");
@@ -50,7 +50,7 @@ namespace ITI.DesignPatterns.Tests
         }        
 
         [Test]
-        public void T5_remove_subscribers()
+        public void T5_remove_subscribers_to_the_company_mailing_list()
         {
             Company company = new Company("GoodNews");
             Subscriber subscriber = new Subscriber("Olivier", "Spinelli");
@@ -63,7 +63,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T6_remove_all_subscribers()
+        public void T6_remove_all_subscribers_to_the_company_mailing_list()
         {
             Company company = new Company("GoodNews");
             Subscriber subscriber1 = new Subscriber("Olivier", "Spinelli");
@@ -82,7 +82,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T7_notifies_subscribers()
+        public void T7_notify_a_subscriber_when_creating_a_news()
         {
             Company company = new Company("GoodNews");
             Subscriber subscriber = new Subscriber("Olivier", "Spinelli");
@@ -95,7 +95,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T8_observer_design_pattern()
+        public void T8_multiple_subscriptions_to_different_car_companies_and_then_unsubscribing_of_one_subscriber_you_have_to_verify_that_notifications_are_sent_to_the_current_subscriber()
         {
             Company goodNews = new Company("GoodNews");
 

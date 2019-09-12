@@ -8,7 +8,7 @@ namespace ITI.DesignPatterns.Tests
     public class T4_AbstractFactoryWithObserverWithDecorator
     {
         [Test]
-        public void T1_abstract_factory_method_test()
+        public void T1_creation_of_several_cars_from_different_garages()
         {
             {
                 ICar renaultClioCar = new Factory(BrandModel.Renault).CreateRenault(RenaultModel.Clio);
@@ -30,7 +30,7 @@ namespace ITI.DesignPatterns.Tests
         }
 
         [Test]
-        public void T2_observer()
+        public void T2_creation_of_a_subscriber_who_subscribes_to_a_carFactory_and_receives_a_notification_when_a_car_is_created_and_then_the_subscriber_unsubscribes()
         {
             {
                 Subscriber subscriber = new Subscriber("Tim", "Tom");
