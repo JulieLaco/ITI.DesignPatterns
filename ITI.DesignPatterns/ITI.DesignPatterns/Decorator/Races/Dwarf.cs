@@ -5,11 +5,6 @@ namespace ITI.DesignPatterns.Decorator.Races
 {
     public class Dwarf : Character
     {
-        private int _drunkLevel;
-        private int _drunkLimit = 20;
-        private int _drunkDamage = 4;
-        private int _normalDamage = 40;
-
         public Dwarf(int drunkLevel) 
         {
             

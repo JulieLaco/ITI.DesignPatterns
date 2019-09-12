@@ -6,7 +6,7 @@ namespace ITI.DesignPatterns.AbstractFactory
 {
     public class Human
     {
-        public Human(string lastName, string firstName) { }
+        public Human(string lastName, string firstName) { throw new NotImplementedException(); }
 
         public string LastName { get; }
 

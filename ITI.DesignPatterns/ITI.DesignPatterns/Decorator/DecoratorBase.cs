@@ -1,4 +1,5 @@
 ﻿using ITI.DesignPatterns.Decorator.Damage;
+using System;
 
 namespace ITI.DesignPatterns.Decorator
 {
@@ -8,18 +9,18 @@ namespace ITI.DesignPatterns.Decorator
 
         public DecoratorBase(Character character)
         {
-            _character = character;
+            throw new NotImplementedException();
         }
 
         public override Damages Attack()
         {
-            return _character.Attack();
+            throw new NotImplementedException();
         }
 
         public override string Name
         {
-            get { throw new System.NotImplementedException(); }
-            set { throw new System.NotImplementedException(); }
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
     }
 }
