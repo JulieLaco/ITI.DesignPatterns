@@ -6,9 +6,12 @@ namespace ITI.DesignPatterns.Observer
 {
     public class Visitor : IObserver
     {
-        public List<Company> _companies = new List<Company>();
+        readonly List<Company> _companies = new List<Company>();
+        readonly List<News> _notifications = new List<News>();
 
-        public List<News> _notifications = new List<News>();
+        public List<Company> Companies { get { return _companies; } }
+
+        public List<News> Notifications { get { return _notifications; } }
 
         public void AddNotification(News notification) => _notifications.Add(notification);
 

@@ -7,15 +7,15 @@ namespace ITI.DesignPatterns.Decorator.Races
     {
         public Dwarf(int drunkLevel) 
         {
-            
+            throw new NotImplementedException();
         }
 
-        public int DrunkDamage { get { throw new System.NotImplementedException(); } }
-        public int NormalDamage { get { throw new System.NotImplementedException(); } }
+        public int DrunkDamage { get { throw new NotImplementedException(); } }
+        public int NormalDamage { get { throw new NotImplementedException(); } }
 
         public override Damages Attack()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

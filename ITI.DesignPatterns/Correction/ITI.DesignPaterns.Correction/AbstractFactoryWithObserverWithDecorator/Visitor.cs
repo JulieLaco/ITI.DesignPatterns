@@ -6,9 +6,8 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public class Visitor : IClient
     {
-        List<Notification> _notifications = new List<Notification>();
-        List<CarFactory> _carFactory = new List<CarFactory>();
-
+        readonly List<Notification> _notifications = new List<Notification>();
+        readonly List<CarFactory> _carFactory = new List<CarFactory>();
 
         public void AddNotification(Notification notification) => _notifications.Add(notification);
 

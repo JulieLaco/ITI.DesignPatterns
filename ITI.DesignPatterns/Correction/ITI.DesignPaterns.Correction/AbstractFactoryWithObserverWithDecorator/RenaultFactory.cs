@@ -12,8 +12,8 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
     }
     public class RenaultFactory : CarFactory
     {
-        List<Notification> _notifications = new List<Notification>();
-        List<IClient> _clients = new List<IClient>();
+        readonly List<Notification> _notifications = new List<Notification>();
+        readonly List<IClient> _clients = new List<IClient>();
 
         public RenaultFactory(string factoryName)
         {

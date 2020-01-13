@@ -6,8 +6,8 @@ namespace ITI.DesignPatterns.Observer
 {
     public class Company
     {
-        readonly public List<IObserver> _companyObserver = new List<IObserver>();
-        readonly public List<News> _newsList = new List<News>();
+        readonly List<IObserver> _companyObserver = new List<IObserver>();
+        readonly List<News> _newsList = new List<News>();
 
         public Company(string name)
         {
@@ -15,6 +15,10 @@ namespace ITI.DesignPatterns.Observer
         }
 
         public string GetName { get; }
+
+        public List<IObserver> CompagniesObservers { get { return _companyObserver; } }
+
+        public List<News> News { get { return _newsList; } }
 
         public void AddSubscriber(IObserver newObserver)
         {

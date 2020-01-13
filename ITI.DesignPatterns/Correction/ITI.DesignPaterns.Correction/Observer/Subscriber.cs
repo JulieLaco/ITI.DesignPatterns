@@ -6,15 +6,18 @@ namespace ITI.DesignPatterns.Observer
 {
     public class Subscriber : IObserver
     {
-        public List<Company> _companies = new List<Company>();
-
-        public List<News> _notifications = new List<News>();
+        readonly List<Company> _companies = new List<Company>();
+        readonly List<News> _notifications = new List<News>();
 
         public Subscriber(string firstName, string lastName)
         {
             GetFirstName = firstName;
             GetLastName = lastName;
         }   
+
+        public List<Company> Companies { get { return _companies; } }
+
+        public List<News> Notifications { get { return _notifications; } }
 
         public string GetLastName { get; }
 

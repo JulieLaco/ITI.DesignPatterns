@@ -6,7 +6,7 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public class DecoratorBase : ICar
     {
-        private ICar _car;
+        private readonly ICar _car;
 
         public DecoratorBase(ICar car)
         {

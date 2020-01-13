@@ -6,14 +6,17 @@ namespace ITI.DesignPatterns.Observer
 {
     public class Subscriber : IObserver
     {
-        public List<Company> _companies = new List<Company>();
-
-        public List<News> _notifications = new List<News>();
+        readonly List<Company> _companies = new List<Company>();
+        readonly List<News> _notifications = new List<News>();
 
         public Subscriber(string firstName, string lastName)
         {
             throw new NotImplementedException();
-        }   
+        }
+
+        public List<Company> Companies { get; }
+
+        public List<News> Notifications { get; }
 
         public string GetLastName { get; }
 

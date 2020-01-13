@@ -6,7 +6,7 @@ namespace ITI.DesignPatterns.AbstractFactory
 {
     public class Dwarf
     {
-        public Dwarf(string lastName, string firstName)
+        internal Dwarf(string lastName, string firstName)
         {
             throw new NotImplementedException();
         }

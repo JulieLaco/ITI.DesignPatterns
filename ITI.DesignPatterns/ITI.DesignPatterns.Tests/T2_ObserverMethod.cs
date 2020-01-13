@@ -25,9 +25,9 @@ namespace ITI.DesignPatterns.Tests
             company.CreateNews("N1", "Message1");
             company.CreateNews("N2", "Message2");
 
-            company._newsList.Should().NotBeNull();
-            company._newsList[0].Title.Should().Be("N1");
-            company._newsList[1].Message.Should().Be("Message2");
+            company.News.Should().NotBeNull();
+            company.News[0].Title.Should().Be("N1");
+            company.News[1].Message.Should().Be("Message2");
         }
 
         [Test]
@@ -45,8 +45,8 @@ namespace ITI.DesignPatterns.Tests
             Subscriber subscriber = new Subscriber("Olivier", "Spinelli");
 
             subscriber.Subscription(company);
-            subscriber._companies[0].GetName.Should().Be("GoodNews");
-            company._companyObserver.Should().NotBeEmpty();
+            subscriber.Companies[0].GetName.Should().Be("GoodNews");
+            company.CompagniesObservers.Should().NotBeEmpty();
         }        
 
         [Test]
@@ -58,8 +58,8 @@ namespace ITI.DesignPatterns.Tests
             subscriber.Subscription(company);
 
             subscriber.Unsubscribe(company);
-            subscriber._companies.Should().NotContain(company);
-            company._companyObserver.Should().NotContain(subscriber);
+            subscriber.Companies.Should().NotContain(company);
+            company.CompagniesObservers.Should().NotContain(subscriber);
         }
 
         [Test]
@@ -74,11 +74,11 @@ namespace ITI.DesignPatterns.Tests
             subscriber2.Subscription(company);
             subscriber3.Subscription(company);
 
-            company._companyObserver.Should().Contain(subscriber3);
+            company.CompagniesObservers.Should().Contain(subscriber3);
 
             company.RemoveAllSubscribers();
-            company._companyObserver.Should().NotContain(subscriber3);
-            company._companyObserver.Should().BeEmpty();
+            company.CompagniesObservers.Should().NotContain(subscriber3);
+            company.CompagniesObservers.Should().BeEmpty();
         }
 
         [Test]
@@ -91,7 +91,7 @@ namespace ITI.DesignPatterns.Tests
 
             company.CreateNews("Achète toi des yeux", "Boulette !");
 
-            subscriber._notifications[0].Title.Should().Be("Achète toi des yeux");
+            subscriber.Notifications[0].Title.Should().Be("Achète toi des yeux");
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace ITI.DesignPatterns.Tests
 
             goodNews.CreateNews("Title1", "Message1");
 
-            olivier._notifications[0].Title.Should().Be("Title1");
+            olivier.Notifications[0].Title.Should().Be("Title1");
 
             Company badNews = new Company("BadNews");
             olivier.Subscription(badNews);
@@ -115,22 +115,22 @@ namespace ITI.DesignPatterns.Tests
             badNews.CreateNews("Title2", "Message2");
             goodNews.CreateNews("Title3", "Message3");
 
-            olivier._notifications[1].Company.Should().Be(badNews);
-            olivier._notifications[2].Company.Should().Be(goodNews);
+            olivier.Notifications[1].Company.Should().Be(badNews);
+            olivier.Notifications[2].Company.Should().Be(goodNews);
 
-            julie._notifications[0].Company.Should().Be(badNews);
+            julie.Notifications[0].Company.Should().Be(badNews);
 
-            julie._notifications.Count.Should().Be(1);
-            olivier._notifications.Count.Should().Be(3);
+            julie.Notifications.Count.Should().Be(1);
+            olivier.Notifications.Count.Should().Be(3);
 
             olivier.Unsubscribe(badNews);
 
             badNews.CreateNews("Title4", "Message4");
 
-            julie._notifications[1].Company.Should().Be(badNews);
+            julie.Notifications[1].Company.Should().Be(badNews);
 
-            julie._notifications.Count.Should().Be(2);
-            olivier._notifications.Count.Should().Be(3);
+            julie.Notifications.Count.Should().Be(2);
+            olivier.Notifications.Count.Should().Be(3);
         }
     }
 }
