@@ -6,7 +6,8 @@ namespace ITI.DesignPatterns.AbstractFactory
 {
     public enum CharacterType
     {
-        Human
+        Human,
+        Dwarf
     }
 
     public class Factory

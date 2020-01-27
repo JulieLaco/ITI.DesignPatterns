@@ -6,8 +6,8 @@ namespace ITI.DesignPatterns.AbstractFactoryWithObserverWithDecorator
 {
     public class Staff : IClient
     {
-        List<Notification> _notifications = new List<Notification>();
-        List<CarFactory> _carFactory = new List<CarFactory>();
+        readonly List<Notification> _notifications = new List<Notification>();
+        readonly List<CarFactory> _carFactory = new List<CarFactory>();
 
         public Staff(string firstName, string lastName)
         {

@@ -4,7 +4,7 @@ namespace ITI.DesignPatterns.Decorator.Classes
 {
     public class Warrior : DecoratorBase
     {
-        private readonly Damages _warriorDamage = new Damages { Quantity = 20, Type = DamageTypes.Physical };
+        private readonly Damages _warriorDamage;
 
         public Warrior(Character character)
             : base(character)

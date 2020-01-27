@@ -4,10 +4,10 @@ namespace ITI.DesignPatterns.Decorator.Races
 {
     public class Human : Character
     {
-        private int _fear;
-        private int _fearLimit = 20;
-        private int _fearDamage = 0;
-        private int _normalDamage = 20;
+        private readonly int _fear;
+        private readonly int _fearLimit = 20;
+        private readonly int _fearDamage = 0;
+        private readonly int _normalDamage = 20;
 
         public Human(int courage)
         {

@@ -4,7 +4,7 @@ namespace ITI.DesignPatterns.Decorator.Classes
 {
     public class Wizard : DecoratorBase
     {
-        private readonly Damages _wizardDamage = new Damages { Quantity = 20, Type = DamageTypes.Magical };
+        private readonly Damages _wizardDamage;
 
         public Wizard(Character character)
             : base(character)
