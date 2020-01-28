@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Correction\ITI.DesignPaterns.Correction\ITI.DesignPaterns.Correction.csproj" />
     <ProjectReference Include="..\ITI.DesignPatterns\ITI.DesignPatterns.csproj" />
   </ItemGroup>
 
